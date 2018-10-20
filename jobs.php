@@ -1,11 +1,13 @@
 <?php
-
+// se incluirá cada que se llame la función 
 require 'app/Models/Job.php';
 require 'app/Models/Project.php';
+// se incluye una sola vez aunque se llame muchas veces la función 
 require_once 'app/Models/Printable.php';
 
 require 'lib1/Project.php';
 
+//utilizamos las clases que están incluidas en nuestro espacio de  nombres App\Models
 use App\Models\{Job, Project};
 
 $job1 = new Job('PHP Developer', 'This is an awesome job!!!');

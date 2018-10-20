@@ -1,8 +1,11 @@
 <?php
+//indicamos a php que busque la clase BaseElement estará disponibles en de App\Models
 namespace App\Models;
 
 require_once 'Printable.php';
 
+//implementamos la interfaz Printable que viene siendo un contrato entre desarrolladores
+//de como se van a nombrar los metodos y que es lo que se necesita hacer
 class BaseElement implements Printable {
     protected $title;
     public $description;
