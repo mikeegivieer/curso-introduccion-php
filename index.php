@@ -1,5 +1,8 @@
 <?php
 
+//Esta instrucción se encargar de mandar a traer el archivo jobs.php solo una vez
+//Esto provoca que no existan errores como cuando utilizamos require solamente y el 
+//archivo podría llamarse varias veces
 require_once('jobs.php');
 
 $name = 'Hector Benitez';
@@ -56,13 +59,14 @@ $limitMonths = 2000;
           <ul>
             <?php
             $totalMonths = 0;
+            //Recordemos que jobs es una arreglo que contriene los puestos que hemos tenido
+            //con la funcion count obtenemos el numero de elementos dentro de $jobs
             for($idx = 0;$idx < count($jobs); $idx++) {
               // $totalMonths = $totalMonths + $jobs[$idx]['months'];
               $totalMonths += $jobs[$idx]->months;
               if($totalMonths > $limitMonths) {
                 break;
               }
-
               printElement($jobs[$idx]);
             }
             ?>
